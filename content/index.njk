@@ -1,0 +1,11 @@
+---
+layout: base.njk
+permalink: /
+---
+{% if catalog.intro %}<div class="intro">{{ catalog.intro | md | safe }}</div>{% endif %}
+
+<ol class="entries">
+  {% for e in catalog.entries | reverse %}
+  <li><a href="/{{ e.slug }}/"><span class="number">{{ e.number }}</span> {{ e.title }}</a></li>
+  {% endfor %}
+</ol>

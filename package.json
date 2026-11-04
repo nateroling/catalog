@@ -1,0 +1,19 @@
+{
+  "name": "catalog",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "sync": "node scripts/sync.mjs",
+    "sync:fixtures": "node scripts/sync.mjs --fixtures fixtures/catalog",
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "test": "node --test test/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.8",
+    "markdown-it": "^15.0.3"
+  }
+}

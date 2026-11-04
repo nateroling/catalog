@@ -1,0 +1,27 @@
+---
+layout: base.njk
+---
+<article>
+  <header class="entry">
+    <p class="number">{{ number }}</p>
+    <h1>{{ title }}</h1>
+  </header>
+  {% if cover %}<img class="cover" src="{{ cover }}" alt="">{% endif %}
+  <div class="body">
+    {{ content | safe }}
+  </div>
+
+  {% if linkedFrom and linkedFrom.length %}
+  <section class="linked-from">
+    <h2>Linked from</h2>
+    <ul>
+      {% for l in linkedFrom %}<li><a href="/{{ l.slug }}/"><span class="number">{{ l.number }}</span> {{ l.title }}</a></li>{% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  <nav class="prev-next">
+    {% if prev %}<a class="prev" href="/{{ prev.slug }}/">← {{ prev.number }} {{ prev.title }}</a>{% else %}<span></span>{% endif %}
+    {% if next %}<a class="next" href="/{{ next.slug }}/">{{ next.number }} {{ next.title }} →</a>{% endif %}
+  </nav>
+</article>

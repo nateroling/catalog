@@ -1,0 +1,15 @@
+---
+# Old slugs (entry renamed in Craft) -> current slug. Maintained by scripts/sync.mjs.
+pagination:
+  data: catalog.redirects
+  size: 1
+  alias: r
+permalink: "/{{ r.from }}/"
+eleventyExcludeFromCollections: true
+---
+<!doctype html>
+<meta charset="utf-8">
+<title>Moved</title>
+<link rel="canonical" href="{{ site.siteUrl }}/{{ r.to }}/">
+<meta http-equiv="refresh" content="0; url=/{{ r.to }}/">
+<a href="/{{ r.to }}/">This entry moved.</a>

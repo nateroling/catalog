@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title %}{{ title }} · {% endif %}{{ site.siteTitle }}</title>
+  <link rel="canonical" href="{{ site.siteUrl }}{{ page.url }}">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <header class="site">
+    <a href="/" class="home">{{ site.siteTitle }}</a>
+  </header>
+  <main>
+    {{ content | safe }}
+  </main>
+  <footer class="site">{{ site.author }}</footer>
+</body>
+</html>

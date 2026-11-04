@@ -1,0 +1,16 @@
+---
+# /NNN/ -> /NNN-slug/ for every entry. GitHub Pages has no server redirects,
+# so these are tiny HTML pages with a meta refresh and a canonical link.
+pagination:
+  data: catalog.entries
+  size: 1
+  alias: e
+permalink: "/{{ e.number }}/"
+eleventyExcludeFromCollections: true
+---
+<!doctype html>
+<meta charset="utf-8">
+<title>{{ e.title }}</title>
+<link rel="canonical" href="{{ site.siteUrl }}/{{ e.slug }}/">
+<meta http-equiv="refresh" content="0; url=/{{ e.slug }}/">
+<a href="/{{ e.slug }}/">{{ e.number }} {{ e.title }}</a>
