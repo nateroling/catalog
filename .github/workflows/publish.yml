@@ -58,8 +58,17 @@ jobs:
 
       # Scheduled runs with no content change stop here; manual runs and code
       # pushes always rebuild.
+      # Tells us where Pages serves the site: base_path is "/catalog" on the
+      # github.io project URL and "" once a custom domain is set.
+      - id: pages
+        if: steps.commit.outputs.changed == 'true' || github.event_name != 'schedule'
+        uses: actions/configure-pages@v5
+
       - name: Build
         if: steps.commit.outputs.changed == 'true' || github.event_name != 'schedule'
+        env:
+          PATH_PREFIX: ${{ steps.pages.outputs.base_path }}/
+          SITE_URL: ${{ steps.pages.outputs.base_url }}
         run: npm run build
 
       - uses: actions/upload-pages-artifact@v3

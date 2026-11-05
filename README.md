@@ -29,8 +29,8 @@ To publish a draft, rename it to `NNN Title`. To unpublish an entry, take the nu
 3. **Add secrets** (Settings → Secrets and variables → Actions):
    - `CRAFT_API_URL` — the API URL from step 1
    - `CRAFT_API_TOKEN` — the token, if Craft gave you one
-4. **Turn on Pages.** Settings → Pages → Source: **GitHub Actions**. Custom domain: `catalog.nateroling.com`, then tick *Enforce HTTPS* once it's available.
-5. **DNS.** At nateroling.com's DNS host, add `CNAME catalog → nateroling.github.io`.
+4. **Turn on Pages.** Settings → Pages → Source: **GitHub Actions**. The site is then live at `https://nateroling.github.io/catalog/`.
+5. **Custom domain (optional, any time later).** At nateroling.com's DNS host, add `CNAME catalog → nateroling.github.io`. Then set Settings → Pages → Custom domain to `catalog.nateroling.com` and tick *Enforce HTTPS* once it's available. No code changes are needed: the build reads the serving URL from Pages, and works both at a domain root and under `/catalog/`.
 6. Actions → Publish → **Run workflow**.
 
 After that, the site updates within about an hour of an edit in Craft. Use **Run workflow** to publish right away.
