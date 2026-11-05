@@ -1,23 +1,11 @@
 {
-  "intro": "`craft.nateroling.com` is the subdomain I use for hosting published Craft documents.\n\n[001 The Catalog](/001-the-catalog/)",
+  "intro": "",
   "entries": [
     {
       "id": "DE8DAC3C-4671-42CE-9452-21DC636ADDAE",
       "number": "001",
       "slug": "001-the-catalog",
       "title": "The Catalog"
-    },
-    {
-      "id": "D9F604F6-6DF4-442D-ACCF-44BF1759C372",
-      "number": "002",
-      "slug": "002-the-main-session",
-      "title": "The Main Session"
-    },
-    {
-      "id": "285E1010-EE7F-4BB6-883A-32A975B3B2FE",
-      "number": "003",
-      "slug": "003-config-md",
-      "title": "config.md"
     }
   ],
   "redirects": []
